@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+@theme {
+  --default-font-family: 'Manrope', sans-serif;
+  --white-color: #f7f7f7;
+}
+html {
+  overflow-y: scroll;
+}
