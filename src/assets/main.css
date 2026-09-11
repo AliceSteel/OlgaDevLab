@@ -3,6 +3,7 @@
 @theme {
   --default-font-family: 'Manrope', sans-serif;
   --white-color: #f7f7f7;
+  --gray-100-color: #f0f0f0;
 }
 html {
   overflow-y: scroll;

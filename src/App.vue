@@ -1,6 +1,6 @@
 <template>
   <AppNav />
-  <main class="bg-[#F0F0F0]">
+  <main class="bg-gray-100 min-h-screen">
     <RouterView />
   </main>
 </template>

@@ -1,6 +1,10 @@
 <template>
   <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10">
-    <div class="absolute left-10 h-full flex items-center font-bold">AliceLab</div>
+    <div
+      class="absolute left-10 h-full flex items-center font-bold bg-white rounded-full px-5 -ml-5"
+    >
+      AliceLab
+    </div>
     <div
       class="absolute left-1/2 -translate-x-1/2 flex w-max whitespace-nowrap rounded-full font-bold bg-white"
     >
@@ -17,15 +21,17 @@
         <span class="z-10 hover:text-white transition-colors duration-1000">Home</span>
       </RouterLink>
       <RouterLink
-        to="/#about"
+        to="/#projects"
         class="bubbleBtn"
-        :class="{ 'is-active': route.path === '/' && route.hash === '#about' }"
+        :class="{ 'is-active': route.path === '/' && route.hash === '#projects' }"
         ><span></span>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <span class="z-10 hover:text-white transition-colors duration-800">About</span></RouterLink
+        <span class="z-10 hover:text-white transition-colors duration-800"
+          >Projects</span
+        ></RouterLink
       >
       <RouterLink
         to="/contact"
