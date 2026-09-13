@@ -1,16 +1,29 @@
 <template>
   <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10">
     <div
-      class="absolute left-10 h-full flex items-center font-bold bg-white rounded-full px-5 -ml-5"
+      class="inline-flex sm:hidden absolute left-10 h-full items-center font-bold bg-white rounded-full px-5 -ml-5"
     >
-      AliceLab
+      A.Lab
     </div>
     <div
-      class="absolute left-1/2 -translate-x-1/2 flex w-max whitespace-nowrap rounded-full font-bold bg-white"
+      class="hidden sm:flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-5 -ml-5"
+    >
+      <span
+        class="overflow-hidden transition-all duration-500 ease-in"
+        :class="isScrolled ? 'w-[0.6rem]' : 'w-10'"
+      >
+        Alice
+      </span>
+
+      <span v-if="isScrolled">.</span>
+      <span>Lab</span>
+    </div>
+    <div
+      class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 flex w-max whitespace-nowrap rounded-full font-bold bg-white"
     >
       <RouterLink
         to="/#landing"
-        class="bubbleBtn"
+        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
         :class="{ 'is-active': route.path === '/' && route.hash === '#landing' }"
       >
         <span></span>
@@ -18,58 +31,53 @@
         <span></span>
         <span></span>
         <span></span>
-        <span class="z-10 hover:text-white transition-colors duration-1000">Home</span>
+        <span class="z-10 hover:text-white sm:transition-colors duration-1000">Home</span>
       </RouterLink>
       <RouterLink
         to="/#projects"
-        class="bubbleBtn"
+        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
         :class="{ 'is-active': route.path === '/' && route.hash === '#projects' }"
         ><span></span>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <span class="z-10 hover:text-white transition-colors duration-800"
+        <span class="z-10 sm:hover:text-white sm:transition-colors duration-800"
           >Projects</span
         ></RouterLink
       >
       <RouterLink
         to="/contact"
-        class="bubbleBtn"
+        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
         :class="{ 'is-active': route.path === '/contact' }"
         ><span></span>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <span class="z-10 hover:text-white transition-colors duration-800"
+        <span class="z-10 sm:hover:text-white transition-colors duration-800"
           >Contact</span
         ></RouterLink
       >
     </div>
-    <div class="absolute right-10 h-full flex items-center">languages</div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+
+const isScrolled = ref<boolean>(false)
+
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    isScrolled.value = window.scrollY > 10
+  })
+})
 const route = useRoute()
 </script>
 
 <style scoped>
-.bubbleBtn {
-  position: relative;
-  display: inline-flex;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 20px;
-  background-color: transparent;
-  padding: 0.75rem;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
 .bubbleBtn span:not(:last-child) {
   position: absolute;
   top: 50%;
@@ -107,14 +115,27 @@ const route = useRoute()
   transform: translate(3.5em, -3.8em);
 }
 
-.bubbleBtn:hover span:not(:last-child) {
-  transform: translate(-50%, -50%) scale(4);
-  transition: transform 1.5s ease;
-  color: #fff;
-}
+.is-active,
 .bubbleBtn.is-active {
-  color: white;
-  background-color: black;
+  color: #000;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bubbleBtn:hover span:not(:last-child) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: transform 1.5s ease;
+  }
+
+  .bubbleBtn:hover span:last-child {
+    color: white;
+  }
+}
+
+@media (hover: none) {
+  .bubbleBtn span:not(:last-child) {
+    transform: translate(-3.3em, -4em);
+  }
 }
 </style>

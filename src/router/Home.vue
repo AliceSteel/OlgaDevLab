@@ -6,13 +6,13 @@
           I specialize in crafting visually stunning and user-friendly app interfaces. My bread and
           butter lies in building a wow effects and buttons meant to be clicked.
         </p>
-        <h1 class="w-full sm:w-3/5 sm text-5xl font-bold">
-          Web Engineer and UX Enthusiast based in Copenhagen.
+        <h1 class="w-full sm:w-3/5 sm text-6xl font-bold">
+          Web Engineer and UX Enthusiast based in London.
         </h1>
       </div>
     </section>
     <section id="projects" class="h-screen pl-10 pt-14">
-      <h2 class="text-3xl mb-6">Concept projects</h2>
+      <h2 class="text-2xl mb-6">Concept projects</h2>
       <div
         class="h-[60vh] flex items-center gap-4 overflow-x-auto snap-x snap-mandatory flex-nowrap pr-10"
       >
@@ -24,7 +24,10 @@
           class="w-[75vw] shrink-0 snap-start h-full rounded-2xl overflow-hidden"
         >
           <a :href="project.websiteUrl" target="_blank" class="">
-            <img :src="project.pic1" :alt="project.name" class="w-full object-top"
+            <img
+              :src="project.pic1"
+              :alt="project.name"
+              class="w-full h-full object-cover object-top"
           /></a>
         </div>
       </div>
