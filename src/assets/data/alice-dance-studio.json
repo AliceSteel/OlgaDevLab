@@ -1,0 +1,24 @@
+{
+  "title": "Alice Dance Studio",
+  "descr": "A dance studio web application built with Next.js that allows users to browse dance classes, instructors, and schedules, while providing e-commerce functionality for purchasing class passes. The site includes admin controls for managing content and integrates payment processing via Stripe. It's deployed on Vercel.",
+  "pic1": "/assets/media/projects/alice-dance/schedule.png",
+  "pic2": "/assets/media/projects/alice-dance/admin-create.png",
+  "pic3": "/assets/media/projects/alice-dance/admin-edit.png",
+  "pic4": "/assets/media/projects/alice-dance/products.png",
+  "pic5": "/assets/media/projects/alice-dance/basket.png",
+  "stack": {
+    "Language": "TypeScript",
+    "Framework / runtime": "Next.js 14 (App Router) + React 18",
+    "libraries": [
+      "Auth: Clerk (authentication & authorization)",
+      "Database: Supabase",
+      "State: Redux Toolkit",
+      "Payments: Stripe",
+      "Styling: Tailwind CSS",
+      "Notifications: React Toastify",
+      "Email: EmailJS"
+    ]
+  },
+  "flow": "The app loads class and instructor data at render time (layout.tsx), preloading it into Redux state. The Clerk middleware protects admin routes and requires authentication for non-public pages. Users browse classes (with filters), add passes to a cart, proceed to Stripe checkout, and track orders in their account. Admins can manage content via admin dashboard.",
+  "websiteUrl": "https://alice-dance-studio.vercel.app"
+}

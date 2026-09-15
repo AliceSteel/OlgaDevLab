@@ -1,0 +1,18 @@
+{
+  "title": "KreepMaster Official Website",
+  "descr": "An official band website for KreepMaster featuring a discography-style music carousel with links to Spotify albums, artist information, and contact details for fans and visitors.",
+  "pic1": "/assets/media/kreepmaster.png",
+  "pic2": "/assets/media/projects/kreepmaster/carousel.png",
+  "stack": {
+    "Language": "JavaScript",
+    "Framework / runtime": "Vue 3 + Vite",
+    "State / routing": "Pinia + Vue Router",
+    "libraries": [
+      "vue3-carousel",
+      "Tailwind CSS",
+      "@vercel/analytics"
+    ]
+  },
+  "flow": "The music page presents KreepMaster releases in a discography-style carousel, with album covers linking visitors to the corresponding Spotify albums. The about and contact section introduces the band and provides contact information for fans and visitors.",
+  "websiteUrl": "https://kreepmaster.vercel.app/"
+}

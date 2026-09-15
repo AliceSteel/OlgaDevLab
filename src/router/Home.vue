@@ -23,12 +23,17 @@
           @focusin="hoveredProject = project"
           class="w-[75vw] shrink-0 snap-start h-full rounded-2xl overflow-hidden"
         >
-          <a :href="project.websiteUrl" target="_blank" class="">
+          <RouterLink
+            :to="{
+              name: 'project',
+              params: { slug: project.slug },
+            }"
+          >
             <img
               :src="project.pic1"
               :alt="project.name"
               class="w-full h-full object-cover object-top"
-          /></a>
+          /></RouterLink>
         </div>
       </div>
 
@@ -40,15 +45,26 @@
           class="typing-text"
           :aria-label="hoveredProject.descr"
         >
-          <h3 class="font-bold">{{ hoveredProject.name }}</h3>
-          <span
-            v-for="(character, index) in hoveredProject.descr"
-            :key="`${hoveredProject.id}-${index}`"
-            class="typing-character"
-            :style="{ animationDelay: `${index * 0.025}s` }"
+          <RouterLink
+            :to="{
+              name: 'project',
+              params: { slug: hoveredProject.slug },
+            }"
           >
-            {{ character }}
-          </span>
+            <h3 class="font-bold">
+              {{ hoveredProject.name }}
+            </h3>
+            <p>
+              <span
+                v-for="(character, index) in hoveredProject.descr"
+                :key="`${hoveredProject.id}-${index}`"
+                class="typing-character"
+                :style="{ animationDelay: `${index * 0.025}s` }"
+              >
+                {{ character }}
+              </span>
+            </p>
+          </RouterLink>
         </div>
       </div>
     </section>

@@ -1,26 +1,31 @@
 [
   {
     "name": "Alice Dance Studio",
-    "id": "00",
+    "id": "alice-dance-studio",
     "title": "Alice Dance Studio E-commerce",
-    "descr": "A Headless E-commerce, built with NextJS, TailwindCSS, and Supabase. It features custom built CMS for content editors that is available through the admin pages. The site is deployed on Vercel.",
+    "descr": "A Headless E-commerce, built with NextJS, TailwindCSS, and Supabase. Read more ->", 
     "pic1": "/assets/media/alice-studio.png",
-    "websiteUrl": "https://alice-dance-studio.vercel.app"
+    "websiteUrl": "https://alice-dance-studio.vercel.app",
+    "slug": "alice-dance-studio"
   },
   {
     "name": "Alice Shop",
-    "id": "01",
+    "id": "alice-shop",
     "title": "Shopify E-Com",
-    "descr": "A Headless E-Commerce site, built with Nuxt and Shopify StorefrontAPI as backend and CMS. The site is deployed on Vercel.",
+    "descr": "A Headless E-Commerce site, built with Nuxt and Shopify StorefrontAPI as backend and CMS. Read more ->",
+    "descr2": "The site is deployed on Vercel.",
     "pic1": "/assets/media/aliceshop.jpg",
-    "websiteUrl": "https://alice-shop.vercel.app"
+    "websiteUrl": "https://alice-shop.vercel.app",
+    "slug": "alice-shop"
   },
   {
     "name": "KreepMaster",
-    "id": "02",
+    "id": "kreepmaster",
     "title": "KreepMaster band Official website",
-    "descr": "A band website built with Vue and TailwindCSS.",
+    "descr": "A band website built with Vue and TailwindCSS. Read more ->",
+    "descr2": "The site is deployed on Vercel.",
     "pic1": "/assets/media/kreepmaster.png",
-    "websiteUrl": "https://kreepmaster.vercel.app/"
+    "websiteUrl": "https://kreepmaster.vercel.app/",
+    "slug": "kreepmaster"
   }
 ]

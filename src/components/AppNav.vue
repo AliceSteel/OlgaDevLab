@@ -1,22 +1,26 @@
 <template>
   <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10">
     <div
-      class="inline-flex sm:hidden absolute left-10 h-full items-center font-bold bg-white rounded-full px-5 -ml-5"
+      class="inline-flex sm:hidden absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5"
     >
-      A.Lab
+      OD
     </div>
     <div
-      class="hidden sm:flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-5 -ml-5"
+      class="hidden sm:flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5"
     >
       <span
         class="overflow-hidden transition-all duration-500 ease-in"
-        :class="isScrolled ? 'w-[0.6rem]' : 'w-10'"
+        :class="isScrolled ? 'w-3' : 'w-9'"
       >
-        Alice
+        Olga
       </span>
 
-      <span v-if="isScrolled">.</span>
-      <span>Lab</span>
+      <!-- <span v-if="isScrolled">.</span> -->
+      <span
+        class="overflow-hidden transition-all duration-500 ease-in"
+        :class="isScrolled ? 'w-2.75' : 'w-14'"
+        >DevLab</span
+      >
     </div>
     <div
       class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 flex w-max whitespace-nowrap rounded-full font-bold bg-white"

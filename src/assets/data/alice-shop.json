@@ -1,0 +1,21 @@
+{
+  "title": "Alice Shop E-commerce",
+  "descr": "A Nuxt 3 storefront-style ecommerce application built with Vue, TypeScript, Tailwind CSS, and Shopify Storefront API. It includes collection and product pages, GraphQL-powered catalog data, Shopify customer authentication, theme switching, and an animated branded landing experience.",
+  "pic1": "/assets/media/aliceshop.jpg",
+  "stack": {
+    "Language": "TypeScript",
+    "Framework / runtime": "Nuxt 3 + Vue",
+    "Styling": "Tailwind CSS",
+    "Backend / CMS": "Shopify Storefront API",
+    "Data fetching": "GraphQL via nuxt-graphql-client",
+    "State management": "Pinia",
+    "Libraries": [
+      "VueUse",
+      "Nuxt Image",
+      "nuxt-graphql-client"
+    ],
+    "Authentication": "Shopify customer authentication with OAuth PKCE"
+  },
+  "flow": "The app presents a branded ecommerce landing page and lets customers browse collections, categories, and product pages. Product and collection data is loaded from Shopify through GraphQL queries. Pinia manages product-related state, while Shopify customer authentication handles account access through an OAuth PKCE flow. The Nuxt layout provides shared navigation and theme switching across the storefront.",
+  "websiteUrl": "https://alice-shop.vercel.app"
+}
