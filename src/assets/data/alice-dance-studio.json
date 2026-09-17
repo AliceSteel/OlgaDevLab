@@ -9,7 +9,7 @@
   "stack": {
     "Language": "TypeScript",
     "Framework / runtime": "Next.js 14 (App Router) + React 18",
-    "libraries": [
+    "Libraries": [
       "Auth: Clerk (authentication & authorization)",
       "Database: Supabase",
       "State: Redux Toolkit",
