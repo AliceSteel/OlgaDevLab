@@ -22,12 +22,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: () => import('./Home.vue'),
+      component: () => import('./HomePage.vue'),
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: () => import('./Contact.vue'),
+      component: () => import('./ContactPage.vue'),
     },
     {
       path: '/project/:slug',
@@ -37,7 +37,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'About',
-      component: () => import('./About.vue'),
+      component: () => import('./AboutPage.vue'),
     },
   ],
 })
