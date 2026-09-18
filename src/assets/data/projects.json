@@ -14,7 +14,7 @@
     "title": "Shopify E-Com",
     "descr": "A Headless E-Commerce site, built with Nuxt and Shopify StorefrontAPI as backend and CMS. Read more ->",
     "descr2": "The site is deployed on Vercel.",
-    "pic1": "/assets/media/aliceshop.jpg",
+    "pic1": "/assets/media/projects/alice-shop/alice-shop-1.png",
     "websiteUrl": "https://alice-shop.vercel.app",
     "slug": "alice-shop"
   },

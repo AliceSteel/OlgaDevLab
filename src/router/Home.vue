@@ -7,11 +7,11 @@
           butter lies in building a wow effects and buttons meant to be clicked.
         </p>
         <h1 class="w-full sm:w-3/5 sm text-6xl font-bold">
-          Web Engineer and UX Enthusiast based in London.
+          Web Engineer and UX Enthusiast based in {{ base }}.
         </h1>
       </div>
     </section>
-    <section id="projects" class="h-screen pl-10 pt-14">
+    <section id="projects" class="h-screen ml-10 pt-14">
       <h2 class="text-2xl mb-6">Concept projects</h2>
       <div
         class="h-[60vh] flex items-center gap-4 overflow-x-auto snap-x snap-mandatory flex-nowrap pr-10"
@@ -73,7 +73,21 @@
 
 <script setup lang="ts">
 import projects from '@/assets/data/projects.json'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const base = ref('London')
+
+onMounted(async () => {
+  try {
+    const res = await fetch('https://ipapi.co/json/')
+    const data = await res.json()
+    if (['DK', 'SE'].includes(data.country_code)) {
+      base.value = 'Copenhagen'
+    }
+  } catch {
+    console.error('Failed to fetch location data')
+  }
+})
 
 type Project = (typeof projects)[number]
 

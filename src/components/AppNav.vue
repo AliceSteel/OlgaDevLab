@@ -1,12 +1,16 @@
 <template>
   <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10">
-    <div
-      class="inline-flex sm:hidden absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5"
+    <RouterLink
+      to="/"
+      class="sm:hidden absolute left-10 h-full flex items-center font-bold bg-white rounded-full px-4 -ml-5"
     >
       OD
-    </div>
-    <div
-      class="hidden sm:flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5"
+    </RouterLink>
+    <RouterLink
+      to="/"
+      title="Home"
+      class="hidden sm:flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5 hover:bg-[#f0f0f0] hover:transition-colors hover:shadow-amber-800 hover:shadow-2xl"
+      :class="{ 'is-active': 'shadow-amber-800 shadow-2xl' }"
     >
       <span
         class="overflow-hidden transition-all duration-500 ease-in"
@@ -15,54 +19,35 @@
         Olga
       </span>
 
-      <!-- <span v-if="isScrolled">.</span> -->
       <span
         class="overflow-hidden transition-all duration-500 ease-in"
         :class="isScrolled ? 'w-2.75' : 'w-14'"
         >DevLab</span
       >
-    </div>
+    </RouterLink>
     <div
       class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 flex w-max whitespace-nowrap rounded-full font-bold bg-white"
     >
       <RouterLink
-        to="/#landing"
+        v-for="link in navLinks"
+        :key="link.name"
+        :to="link.path"
         class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
-        :class="{ 'is-active': route.path === '/' && route.hash === '#landing' }"
+        :class="{
+          'is-active': link.isAnchor
+            ? route.path === '/' && route.hash === link.routeHash
+            : route.path === link.path,
+        }"
       >
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <span class="z-10 hover:text-white sm:transition-colors duration-1000">Home</span>
+        <span class="z-10 hover:text-white sm:transition-colors duration-1000">{{
+          link.name
+        }}</span>
       </RouterLink>
-      <RouterLink
-        to="/#projects"
-        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
-        :class="{ 'is-active': route.path === '/' && route.hash === '#projects' }"
-        ><span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="z-10 sm:hover:text-white sm:transition-colors duration-800"
-          >Projects</span
-        ></RouterLink
-      >
-      <RouterLink
-        to="/contact"
-        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
-        :class="{ 'is-active': route.path === '/contact' }"
-        ><span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="z-10 sm:hover:text-white transition-colors duration-800"
-          >Contact</span
-        ></RouterLink
-      >
     </div>
   </nav>
 </template>
@@ -70,6 +55,25 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+
+const navLinks = [
+  {
+    name: 'Projects',
+    path: '/#projects',
+    routeHash: '#projects',
+    isAnchor: true,
+  },
+  {
+    name: 'About',
+    path: '/about',
+    isAnchor: false,
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+    isAnchor: false,
+  },
+]
 
 const isScrolled = ref<boolean>(false)
 
@@ -123,7 +127,7 @@ const route = useRoute()
 .bubbleBtn.is-active {
   color: #000;
   background-color: #f0f0f0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 38px 50px -12px rgb(146 64 14 / 1);
   pointer-events: none;
 }
 @media (hover: hover) and (pointer: fine) {

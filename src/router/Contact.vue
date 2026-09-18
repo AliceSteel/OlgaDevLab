@@ -1,14 +1,7 @@
 <template>
   <section id="contact" class="w-full px-0 py-32 pb-26 font-medium">
-    <h2 class="px-[15%] py-12 text-2xl leading-none">
-      Contact via this form, <a class="underline" href="mailto:alicedevlab@gmail.com">email</a>, or
-      <a
-        href="https://www.linkedin.com/in/oli-garkusha-49598a12b/"
-        target="_blank"
-        class="underline"
-        >LinkedIn</a
-      >
-    </h2>
+    <h2 class="px-[15%] text-2xl leading-none pt-12">Let's chat!</h2>
+    <p class="px-[15%] pb-12 text-2xl leading-none">hello@olgadevlab.com or drop a message here:</p>
     <form
       id="contact_form"
       class="relative flex w-full flex-col items-start justify-around border-t border-black/80"
