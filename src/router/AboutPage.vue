@@ -6,7 +6,7 @@
       <img
         src="/assets/media/about_me.jpg"
         alt="About me image"
-        class="object-cover w-1/5 min-w-46 float-right rounded-4xl ml-1"
+        class="object-cover w-52 float-right rounded-4xl ml-1 shadow-2xl shadow-amber-800"
       />
       <p class="mb-5">
         I’m a web engineer focused on building fast, well-structured web products that are built to
