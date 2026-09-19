@@ -1,15 +1,15 @@
 <template>
   <div>
-    <section id="landing" class="h-[75vh] pb-12 px-10">
-      <div class="flex flex-wrap justify-between items-end h-full">
-        <p class="w-1/2 sm:w-48 text-sm">
-          I specialize in crafting visually stunning and user-friendly app interfaces. My bread and
-          butter lies in building a wow effects and buttons meant to be clicked.
-        </p>
-        <h1 class="w-full sm:w-3/5 sm text-6xl font-bold">
-          Web Engineer and UX Enthusiast based in {{ base }}.
-        </h1>
-      </div>
+    <section
+      class="min-h-[65vh] pt-16 pb-0 sm:pb-16 px-10 flex flex-wrap gap-y-10 justify-between items-end h-full"
+    >
+      <p class="w-1/2 sm:w-48 text-sm">
+        I specialize in crafting visually stunning and user-friendly app interfaces. My bread and
+        butter lies in building a wow effects and buttons meant to be clicked.
+      </p>
+      <h1 class="w-full sm:w-3/5 sm text-5xl sm:text-6xl font-bold">
+        Web Engineer and UX Enthusiast based in {{ base }}.
+      </h1>
     </section>
     <section id="projects" class="h-screen ml-10 pt-14">
       <h2 class="text-2xl mb-6">Concept projects</h2>
