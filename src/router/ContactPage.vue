@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="w-full px-0 py-32 pb-26 font-medium">
+  <section class="w-full px-0 py-16 md:py-32 pb-26 font-medium">
     <h2 class="px-[15%] text-2xl leading-none pt-12">Let's chat!</h2>
     <p class="px-[15%] pb-12 text-2xl leading-none">hello@olgadevlab.com or drop a message here:</p>
     <form
@@ -49,10 +49,7 @@
           placeholder=" "
         ></textarea>
         <label class="floating-label"><sup>(3) </sup>Message</label>
-        <div
-          v-if="errors.message.length"
-          class="absolute left-0 top-full z-10 w-full border-t-2 border-red-500 pl-[30%] text-left text-base leading-6 text-red-500"
-        >
+        <div v-if="errors.message.length" class="error-message">
           {{ errors.message }}
         </div>
       </div>
@@ -62,14 +59,14 @@
         type="submit"
         class="relative flex w-full items-start justify-start border-b border-black/80 bg-white px-[15%] py-6 text-left text-[clamp(3rem,4.5vw,4.5rem)] leading-none capitalize text-black transition-colors hover:bg-black hover:text-white focus:bg-black focus:text-white"
       >
-        <span><sup>(4) </sup>Submit</span>
+        <span><sup>(4) </sup>Send</span>
       </button>
       <div
         v-if="answer.text"
         :class="
           answer.success
             ? 'absolute left-[20%] top-full text-left text-2xl text-green-600'
-            : 'absolute left-0 top-full z-10 w-full border-t-2 border-red-500 pl-[30%] text-left text-base leading-6 text-red-500'
+            : 'error-message'
         "
       >
         {{ answer.text }}
@@ -114,7 +111,7 @@ const checkAndSend = async () => {
   let valid = true
 
   if (!name.value || name.value.length <= 1) {
-    errors.name = 'Name longer than 1 letter is required.'
+    errors.name = 'Name is too short.'
     valid = false
   }
 
@@ -127,7 +124,7 @@ const checkAndSend = async () => {
   }
 
   if (!message.value || message.value.length < 2) {
-    errors.message = 'Message longer than 2 characters is required.'
+    errors.message = 'Message is too short.'
     valid = false
   }
 
@@ -210,8 +207,8 @@ sup {
 }
 
 .error-message {
-  @apply absolute left-0 top-full z-10 w-full border-t-2 border-red-500
-    pl-[30%] text-left text-base leading-6 text-red-500;
+  @apply absolute left-0 top-0 z-10 w-full border-t-2 border-red-500
+    pl-[15%] text-left text-base leading-6 text-red-500;
 }
 
 sup {
