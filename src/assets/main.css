@@ -2,8 +2,10 @@
 
 @theme {
   --default-font-family: 'Manrope', sans-serif;
-  --white-color: #f7f7f7;
-  --gray-100-color: #f0f0f0;
+  --color-white: #f7f7f7;
+  --color-gray-100: #f0f0f0;
+  --breakpoint-xl: 1790px;
+  --text-shadow-2xl: 0 20px 35px var(--tw-text-shadow-color, rgb(180 83 9 / 0.9));
 }
 html {
   overflow-y: scroll;

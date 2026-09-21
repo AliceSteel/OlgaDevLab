@@ -1,21 +1,21 @@
 <template>
-  <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10 text-sm sm:text-base">
+  <nav class="fixed top-5 inset-x-0 z-50 h-10 px-10">
     <RouterLink
       to="/"
       title="Home"
-      class="flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5 hover:bg-[#f0f0f0] hover:transition-colors hover:shadow-amber-800 hover:shadow-2xl"
-      :class="{ 'is-active': 'shadow-amber-800 shadow-2xl' }"
+      class="flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5 hover:bg-gray-100 hover:transition-colors hover:shadow-2xl"
+      :class="{ 'is-active ': route.path === '/' }"
     >
       <span
         class="overflow-hidden transition-all duration-500 ease-in"
-        :class="isScrolled ? 'w-2.5' : 'w-8'"
+        :class="isScrolled ? 'w-3' : 'w-9'"
       >
         Olga
       </span>
 
       <span
         class="overflow-hidden transition-all duration-500 ease-in"
-        :class="isScrolled ? 'w-2.5' : 'w-14'"
+        :class="isScrolled ? 'w-2.75' : 'w-14'"
         >DevLab</span
       >
     </RouterLink>
@@ -23,26 +23,17 @@
     <div
       class="hidden sm:flex absolute right-0 sm:left-1/2 sm:-translate-x-1/2 w-max whitespace-nowrap rounded-full font-bold bg-white"
     >
-      <RouterLink
+      <BubbleLinkBtn
         v-for="link in navLinks"
         :key="link.name"
         :to="link.path"
-        class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-transparent px-3 uppercase whitespace-nowrap"
-        :class="{
-          'is-active': link.isAnchor
+        :text="link.name"
+        :is-active="
+          link.isAnchor
             ? route.path === '/' && route.hash === link.routeHash
-            : route.path === link.path,
-        }"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="z-10 hover:text-white sm:transition-colors duration-1000">{{
-          link.name
-        }}</span>
-      </RouterLink>
+            : route.path === link.path
+        "
+      />
     </div>
     <!-- Links mobile trigger: two dots -->
     <button
@@ -93,6 +84,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import BubbleLinkBtn from '@/components/BubbleLinkBtn.vue'
 
 const navLinks = [
   {
