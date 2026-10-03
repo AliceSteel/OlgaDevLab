@@ -1,6 +1,10 @@
 <template>
-  <RouterLink
-    :to="to"
+  <component
+    :is="isExternal ? 'a' : RouterLink"
+    :href="isExternal ? props.to : undefined"
+    :to="isExternal ? undefined : props.to"
+    :target="isExternal ? '_blank' : undefined"
+    :rel="isExternal ? 'noopener noreferrer' : undefined"
     class="bubbleBtn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full px-3 uppercase whitespace-nowrap"
     :class="{ 'is-active': isActive }"
     :style="{
@@ -20,13 +24,14 @@
     <span class="z-10 hover:text-(--bubble-hover-color) sm:transition-colors duration-1000">{{
       text
     }}</span>
-  </RouterLink>
+  </component>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     to: string
     text: string
@@ -44,6 +49,7 @@ withDefaults(
     isActive: false,
   },
 )
+const isExternal = computed(() => /^https?:\/\//i.test(props.to))
 </script>
 
 <style scoped>

@@ -30,9 +30,9 @@ const router = createRouter({
       component: () => import('./ContactPage.vue'),
     },
     {
-      path: '/project/:slug',
+      path: '/project/:projectSlug',
       name: 'project',
-      component: () => import('./project/[slug].vue'),
+      component: () => import('./project/[projectSlug].vue'),
     },
     {
       path: '/about',

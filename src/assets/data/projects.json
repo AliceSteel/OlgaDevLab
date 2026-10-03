@@ -6,7 +6,7 @@
     "descr": "A Headless E-commerce, built with NextJS, TailwindCSS, and Supabase. Read more ->", 
     "pic1": "/assets/media/alice-studio.png",
     "websiteUrl": "https://alice-dance-studio.vercel.app",
-    "slug": "alice-dance-studio"
+    "projectSlug": "alice-dance-studio"
   },
   {
     "name": "Alice Shop",
@@ -16,7 +16,7 @@
     "descr2": "The site is deployed on Vercel.",
     "pic1": "/assets/media/projects/alice-shop/alice-shop-1.png",
     "websiteUrl": "https://alice-shop.vercel.app",
-    "slug": "alice-shop"
+    "projectSlug": "alice-shop"
   },
   {
     "name": "KreepMaster",
@@ -26,6 +26,6 @@
     "descr2": "The site is deployed on Vercel.",
     "pic1": "/assets/media/kreepmaster.png",
     "websiteUrl": "https://kreepmaster.vercel.app/",
-    "slug": "kreepmaster"
+    "projectSlug": "kreepmaster"
   }
 ]

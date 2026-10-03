@@ -26,7 +26,7 @@
           <RouterLink
             :to="{
               name: 'project',
-              params: { slug: project.slug },
+              params: { projectSlug: project.projectSlug },
             }"
           >
             <img
@@ -48,7 +48,7 @@
           <RouterLink
             :to="{
               name: 'project',
-              params: { slug: hoveredProject.slug },
+              params: { projectSlug: hoveredProject.projectSlug },
             }"
           >
             <h3 class="font-bold">
