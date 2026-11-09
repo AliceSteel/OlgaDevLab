@@ -3,7 +3,7 @@
     <RouterLink
       to="/"
       title="Home"
-      class="flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-5 hover:bg-gray-100 hover:transition-colors hover:shadow-2xl"
+      class="flex absolute left-10 h-full items-center font-bold bg-white rounded-full px-4 -ml-4 hover:bg-gray-100 hover:transition-colors hover:shadow-2xl"
       :class="{ 'is-active ': route.path === '/' }"
     >
       <span
